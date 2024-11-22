@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+        .container{
+            margin: 100px auto;
+            /* border: 2px solid black; */
+            width: 400px;
+            height: 300px;
+            background-color: rgb(68, 49, 85);
+            border-radius: 30px;
+            color: aliceblue;
+            
+        }
+        .container:hover{
+            box-shadow: 3px 3px 30px black;
+        }
+        .child{
+            padding:20px 30px;
+            font-size: larger;
+        }
+        span{
+            padding-right:10px;
+        }
+        input{
+            width: 250px;
+            height: 30px;
+            border: none;
+            border-radius: 6px;
+        }
+        button{
+            margin-right: 10px;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 3px;
+        }
+        h4{
+            float: inline-start;
+            padding-right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="child">
+            <span for="">Num1 :</span><input type="text" placeholder="Enter Number1" id="num1">
+        </div>
+        <div class="child">
+            <span for="">Num2 :</span><input type="text" placeholder="Enter Number2" id="num2">
+        </div>
+        <div class="child">
+            <button id="add">+</button>
+            <button id="sub">-</button>
+            <button id="mul">*</button>
+            <button id="div">/</button>
+        </div>
+        <div class="child">
+            <h4>Result :</h4> <span id="finalValue"></span>
+        </div>
+    </div>
+
+    <script>
+        let num1=document.getElementById("num1")
+        let num2=document.getElementById("num2")
+        let add=document.getElementById("add")
+        let sub=document.getElementById("sub")
+        let mul=document.getElementById("mul")
+        let div=document.getElementById("div")
+        let finalValue=document.getElementById("finalValue")
+        let operatoinValue=0
+        
+        add.addEventListener("click", (event) => {
+            operationValue = parseInt(num1.value) + parseInt(num2.value);
+            finalValue.textContent = operationValue;
+            num1.value = ""
+            num2.value = ""
+            event.target.style.background="red"
+            
+        });
+
+        sub.addEventListener("click", (event) => {
+            operationValue = parseInt(num1.value) - parseInt(num2.value);
+            finalValue.textContent = operationValue;
+            num1.value = ""
+            num2.value = ""
+            event.target.style.background="green"
+        });
+        mul.addEventListener("click", (event) => {
+            operationValue = parseInt(num1.value) * parseInt(num2.value);
+            finalValue.textContent = operationValue;
+            num1.value = ""
+            num2.value = ""
+            event.target.style.background="yellow"
+        });
+        div.addEventListener("click", (event) => {
+            operationValue = parseInt(num1.value) / parseInt(num2.value);
+            finalValue.textContent = operationValue;
+            num1.value = ""
+            num2.value = ""
+            event.target.style.background="blue"
+        });
+    </script>
+</body>
+</html>

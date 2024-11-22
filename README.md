@@ -1,1 +1,1 @@
-Using HTMl, CSS And JavaScript The mini Calculator id designed
+Using HTMl, CSS And JavaScript The mini Calculator is designed
